@@ -10,6 +10,11 @@ from firebase import Firebase
 
 db = firebase.database()
 
+
+@app.route("/")
+def index():
+    return render_template(index)
+
 @app.route("api/post/mentor_preferences", methods = ['POST'])
 def set_mentor_request():
     # get the value of user id from query parameter (i.e. ?user_id=some-value)
