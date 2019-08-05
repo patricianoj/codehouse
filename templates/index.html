@@ -1,143 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<head>
-    <title>Mentee</title>
-</head>
- 
-<body>
- 
+    <head>
+        <title>Mentee</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+        <style>
+            body {
+                padding: 60px;
+            }
+        @media (max-width: 980px) {
+            body {
+                padding-top: 0;
+            }
+        }
+        </style>
+    </head>
+    <body>
         <div class="container">
-            <h3 class="text-muted">Mentee</h3>
+            <h3>Mentee's Mentor Preferences</h3>
         </div>
- 
-        <form action = "{{ url_for('set_mentor_request', id = user_id) }}"  method = "post">
-        <div class="row marketing">
-            <div class="col-lg-6">
-                <h4>Identity Groups</h4>
-                <p>Check all identities you identify with</p>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1" name="Latinx">
-                    <label class="custom-control-label" for="customCheck1">Latinx / Hispanics</label>
-                </div>
-                    
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2" name="Black">
-                    <label class="custom-control-label" for="customCheck1">Black</label>
-                </div>
-                
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck3" name="AmericanIndia">
-                    <label class="custom-control-label" for="customCheck1">American Indian / Native American</label>
-                </div>
-                    
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4" name="Womyn">
-                     <label class="custom-control-label" for="customCheck1">Womyn</label>
-                </div>
-
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck5" name="LGBTQ">
-                     <label class="custom-control-label" for="customCheck1">LGBTQ+</label>
-                </div>
-        </div>
- 
-                <h4>Introvert or Extrovert</h4>
-                <p>From 1 to 5, how much of an introvert or extrovert are you (1 = Introvert and 5 = Extrover)</p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio1" value="1" >
-                    <label class="form-check-label" for="inlineRadio1">1</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio2" value="2">
-                    <label class="form-check-label" for="inlineRadio2">2</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio3" value="3">
-                    <label class="form-check-label" for="inlineRadio3">3</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio3" value="4">
-                    <label class="form-check-label" for="inlineRadio4">4</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio5" value="5">
-                    <label class="form-check-label" for="inlineRadio5">5</label>
-                </div>
-
- 
-                <h4>IMposter Syndrome</h4>
-                <p>Have you experience <a href=" " title="definition">imposter syndrome.</a>? </p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Imposter" id="inlineRadio1" value="1">
-                    <label class="form-check-label" for="inlineRadio2">yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Imposter" id="inlineRadio2" value="2">
-                    <label class="form-check-label" for="inlineRadio2">no</label>
-                </div>
+        <form action = "{{ url_for('set_mentor_request', id = name) }}"  method = "post">
+            <h4>Identity Groups</h4>
+            <p>Check all identities you identify with</p>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" name="Latinx">
+                <label class="custom-control-label" for="customCheck1">Latinx / Hispanics</label>
             </div>
- 
-            <div class="col-lg-6">
-                <h4>Interest</h4>
-                <p>check all that apply</p>
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1" name="Art">
-                     <label class="custom-control-label" for="customCheck1">Art</label>
-                </div>
-
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2" name="Dance">
-                     <label class="custom-control-label" for="customCheck2">Dance</label>
-                </div>
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck3" name="Sports">
-                     <label class="custom-control-label" for="customCheck3">Sports</label>
-                </div>
-                
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4" name="outdoors">
-                     <label class="custom-control-label" for="customCheck4">outdoors</label>
-                </div>
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck5" name="Travel">
-                     <label class="custom-control-label" for="customCheck5">Travel</label>
-                </div>
-
-                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck6" name="VideoGames">
-                     <label class="custom-control-label" for="customCheck6">VideoGames</label>
-                </div>
-
-                <h4>Years of experience in computer science</h4>
-                <select class="custom-select" name="experience">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <option value="4">Four+</option>
-                </select>
- 
-                <h4>Where did you grow up?</h4>
-                <div class="btn-group" role="group" aria-label="Basic example" name="grewUp">
-                     <input type="checkbox" class="custom-control-input" id="customCheck1" >
-                     <label class="custom-control-label" for="customCheck1">urban</label>
-                </div>
-              <div class="btn-group" role="group" aria-label="Basic example" name="grewUp2">
-                     <input type="checkbox" class="custom-control-input" id="customCheck2">
-                     <label class="custom-control-label" for="customCheck2">rural</label>
-                </div>
-             
-             <div class="btn-group" role="group" aria-label="Basic example" name="grewUp3">
-                     <input type="checkbox" class="custom-control-input" id="customCheck2">
-                     <label class="custom-control-label" for="customCheck2">surburban area</label>
-                </div>
-              
-        </div>
-    </div>
-  <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"> Submit </button>
-  </form>
- </body>
- 
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2" name="Black">
+                <label class="custom-control-label" for="customCheck1">Black</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3" name="AmericanIndia">
+                <label class="custom-control-label" for="customCheck1">American Indian / Native American</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck4" name="Womyn">
+                <label class="custom-control-label" for="customCheck1">Womyn</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck5" name="LGBTQ">
+                <label class="custom-control-label" for="customCheck1">LGBTQ+</label>
+            </div>
+            <br>
+            
+            <h4>Introvert or Extrovert</h4>
+            <p>From 1 to 5, how much of an introvert or extrovert are you (1 = Introvert and 5 = Extrovert)</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio1" value="1" >
+                <label class="form-check-label" for="inlineRadio1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio2" value="2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio3" value="3">
+                <label class="form-check-label" for="inlineRadio3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio3" value="4">
+                <label class="form-check-label" for="inlineRadio4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Introvert" id="inlineRadio5" value="5">
+                <label class="form-check-label" for="inlineRadio5">5</label>
+            </div>
+            <br>
+            
+            <h4>Imposter Syndrome</h4>
+            <p>Have you experience <a href=" " title="definition">imposter syndrome.</a>? </p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Imposter" id="inlineRadio1" value="1">
+                <label class="form-check-label" for="inlineRadio2">yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Imposter" id="inlineRadio2" value="2">
+                <label class="form-check-label" for="inlineRadio2">no</label>
+            </div>
+            <br>
+        
+            <h4>Interest</h4>
+            <p>check all that apply</p>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" name="Art">
+                <label class="custom-control-label" for="customCheck1">Art</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2" name="Dance">
+                <label class="custom-control-label" for="customCheck2">Dance</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3" name="Sports">
+                <label class="custom-control-label" for="customCheck3">Sports</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck4" name="outdoors">
+                <label class="custom-control-label" for="customCheck4">outdoors</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck5" name="Travel">
+                <label class="custom-control-label" for="customCheck5">Travel</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck6" name="VideoGames">
+                <label class="custom-control-label" for="customCheck6">VideoGames</label>
+            </div>
+            <br>
+            
+            <h4>Years of experience in computer science</h4>
+            <select class="custom-select" name="experience">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four+</option>
+            </select>
+            <br>
+            
+            <h4>Grew up in...</h4>
+            <div class="btn-group" role="group" aria-label="Basic example" name="grewUp">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" >
+                <label class="custom-control-label" for="customCheck1">urban</label>
+            </div>
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example" name="grewUp2">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">rural</label>
+            </div>
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example" name="grewUp3">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">surburban area</label>
+            </div>
+            <br>
+            
+            <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"> Submit </button>
+            <br>
+        </form>
+    </body>
 </html>
-
