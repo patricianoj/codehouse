@@ -1,10 +1,12 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.7
+FROM nginx:1.16-alpine
+RUN apk update
+RUN apk add py-pip
 
 RUN pip install xlrd
 RUN pip install python-dateutil
-RUN pip install reportlab
-RUN pip install icalendar
+#RUN pip install reportlab
 RUN pip install flask_bootstrap
 
-COPY ./app /app
-WORKDIR /app
+COPY . /usr/share/nginx/html
+#COPY . /usr/src/app/
+#WORKDIR /app
